@@ -1,0 +1,113 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Used Car Price Predictor</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Used Car Price Predictor</h1>
+    <form method="POST">
+        <!-- Year -->
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="number" class="form-control" name="year" id="year" min="1980" max="2023" required>
+        </div>
+        <!-- Odometer -->
+        <div class="form-group">
+            <label for="odometer">Odometer Reading:</label>
+            <input type="number" class="form-control" name="odometer" id="odometer" min="0" max="500000" required>
+        </div>
+        <!-- Manufacturer -->
+        <div class="form-group">
+            <label for="manufacturer">Manufacturer:</label>
+            <select class="form-control" name="manufacturer" id="manufacturer" required>
+                {% for manufacturer in manufacturers %}
+                    <option value="{{ manufacturer }}">{{ manufacturer.capitalize() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Condition -->
+        <div class="form-group">
+            <label for="condition">Condition:</label>
+            <select class="form-control" name="condition" id="condition" required>
+                {% for condition in conditions %}
+                    <option value="{{ condition }}">{{ condition.capitalize() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Cylinders -->
+        <div class="form-group">
+            <label for="cylinders">Cylinders:</label>
+            <select class="form-control" name="cylinders" id="cylinders" required>
+                {% for cylinder in cylinders %}
+                    <option value="{{ cylinder }}">{{ cylinder }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Fuel -->
+        <div class="form-group">
+            <label for="fuel">Fuel Type:</label>
+            <select class="form-control" name="fuel" id="fuel" required>
+                {% for fuel in fuels %}
+                    <option value="{{ fuel }}">{{ fuel.capitalize() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Title Status -->
+        <div class="form-group">
+            <label for="title_status">Title Status:</label>
+            <select class="form-control" name="title_status" id="title_status" required>
+                {% for status in title_statuses %}
+                    <option value="{{ status }}">{{ status.capitalize() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Transmission -->
+        <div class="form-group">
+            <label for="transmission">Transmission:</label>
+            <select class="form-control" name="transmission" id="transmission" required>
+                {% for transmission in transmissions %}
+                    <option value="{{ transmission }}">{{ transmission.capitalize() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Drive -->
+        <div class="form-group">
+            <label for="drive">Drive:</label>
+            <select class="form-control" name="drive" id="drive" required>
+                {% for drive in drives %}
+                    <option value="{{ drive }}">{{ drive.upper() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Type -->
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <select class="form-control" name="type" id="type" required>
+                {% for type in types %}
+                    <option value="{{ type }}">{{ type.capitalize() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- State -->
+        <div class="form-group">
+            <label for="state">State:</label>
+            <select class="form-control" name="state" id="state" required>
+                {% for state in states %}
+                    <option value="{{ state }}">{{ state }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Predict Price</button>
+    </form>
+</div>
+</body>
+</html>

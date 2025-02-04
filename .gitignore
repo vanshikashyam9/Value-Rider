@@ -1,0 +1,111 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environment
+venv/
+ENV/
+env/
+*.env
+*.venv
+
+# Data files and models
+*.csv
+*.data
+*.dat
+*.pkl
+*.h5
+*.keras
+*.joblib
+*.json
+*.npy
+
+# Saved model files
+model.h5
+model.keras
+*.ckpt
+
+# Logs and debug files
+logs/
+*.log
+debug.log
+
+# Flask specific files
+instance/
+.env
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest cache
+.cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Sphinx documentation
+docs/_build/
+
+# PyCharm files
+.idea/
+*.iml
+*.iws
+
+# VS Code files
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+*.swp
+*~
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Python egg files
+*.egg
+*.egg-info
+.eggs/
+
+# Celery beat schedule files
+celerybeat-schedule
+
+# Profiler output
+profiler.log
+
+# MyPy
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Other
+*.pyc
